@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>風景写真</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #ffffff;
+            font-weight: bold;
+            font-family: "ヒラギノ明朝 ProN", "Hiragino Mincho Pro";
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: auto;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* すべての画像を、縦も横も絶対に枠からはみ出させない設定 */
+        .swiper-slide img {
+            display: block;
+            width: auto;
+            /* 横幅の100%固定を解除し、自動にする */
+            height: auto;
+            /* 高さの100%固定を解除し、自動にする */
+            max-width: 100%;
+            /* 枠の横幅からはみ出さないようにする */
+            max-height: 100%;
+            /* 枠の高さからはみ出さないようにする */
+            object-fit: contain;
+            /* 縦横比を維持して枠内に収める */
+        }
+
+
+        body {
+            background: #ffffff;
+            color: #000;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mySwiper2 {
+            height: 80%;
+            width: 100%;
+        }
+
+        .mySwiper {
+            height: 20%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .mySwiper .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .mySwiper .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+
+        /* 1. 【上のメイン画像用】縦も横も絶対に見切れない設定 */
+        .mySwiper2 .swiper-slide img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* 2. 【下のサムネイル用】枠いっぱいに画像を敷き詰めて間隔を詰める設定 */
+        .mySwiper .swiper-slide img {
+            display: block;
+            width: 100%;
+            /* 枠の横幅いっぱいに広げる */
+            height: 100%;
+            /* 枠の高さいっぱいに広げる */
+            object-fit: cover;
+            /* 枠に合わせて自動でトリミングし、隙間をなくす */
+        }
+
+        /* 矢印の色を強制的に変更する（例：赤色にする場合） */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #a00300 !important;
+            /* お好みの色コードを指定してください */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <ul>
+                <li>
+                    <h1 class="text"><a href="index.html">ひがた日和</a></h1>
+                </li>
+            </ul>
+            <nav class="overlay-nav">
+                <ul class="nav-list">
+                    <li><a href="sio.html">潮の満ち引き</a></li>
+                    <li><a href="wajiro.html">和白干潟</a></li>
+                    <li><a href="picture.html">風景写真</a></li>
+                    <li><a href="about.html">このサイトについて</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Swiper -->
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0622172001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/06221720026.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/06221720010.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0622172001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/06221720026.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0622172009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/06221720010.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0709191501.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191502.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191503.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191504.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191505.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191506.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191507.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191508.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191509.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191510.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0709191501.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191502.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191503.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191504.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191505.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191506.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191507.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191508.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191509.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0709191510.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/0619175001.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175002.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175003.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175004.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175005.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175006.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175007.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175008.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/0619175009.JPG" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/260619175129659.JPG" />
+            </div>
+        </div>
+    </div>
+    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+    </p>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.mySwiper', {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+            autoHeight: true,
+        });
+        var swiper2 = new Swiper('.mySwiper2', {
+            loop: true,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    </script>
+
+</body>
+
+</html>
