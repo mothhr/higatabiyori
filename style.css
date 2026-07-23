@@ -20,6 +20,22 @@ li {
     list-style: none;
 }
 
+body {
+    background-image: url('images/main3.JPG');
+    background-size: cover;
+    /* 画像を画面全体にフィットさせる */
+    background-position: center;
+    /* 画像の中心を基準にする */
+    background-repeat: no-repeat;
+    /* 画像の繰り返しを禁止する */
+    background-attachment: fixed;
+    /* スクロールしても背景を固定する（任意） */
+    min-height: 100vh;
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
 .header-container {
     display: flex;
     flex-direction: column;
